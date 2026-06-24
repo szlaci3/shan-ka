@@ -19,14 +19,14 @@ function App() {
 		<BrowserRouter>
 			<Navigation />
 			<Routes>
-				<Route path="/" element={<Direct />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/full" element={<Full />} />
 				<Route path="/inverse" element={<Inverse />} />
 				<Route path="/list" element={<List />} />
 				<Route path="/cardForm" element={<CardForm />} />
 				<Route path="/cardForm/:id" element={<CardForm />} />
-				<Route path="/direct" element={<Groups />} />
-				<Route path="/groups" element={<Home />} />
+				<Route path="/groups" element={<Groups />} />
+				<Route path="/direct" element={<Direct />} />
 				<Route path="/sentence" element={<Sentence />} />
 				<Route path="/sentenceFull" element={<SentenceFull />} />
 				<Route path="/sentenceInverse" element={<SentenceInverse />} />

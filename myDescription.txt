@@ -3,6 +3,7 @@ using npm
 Shan-Ka Project copied from
 https://github.com/szlaci3/memory-cards
 
+Meant for Chinese user
 
 
 2025-01-07
