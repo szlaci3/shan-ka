@@ -1,0 +1,112 @@
+using npm
+
+Shan-Ka Project copied from
+https://github.com/szlaci3/memory-cards
+
+
+
+2025-01-07
+Created empty repo on github
+    https://github.com/szlaci3/smart-anki-2.git
+clone
+
+npm create vite@latest . --template react-ts
+
+https can't be displayed, so 
+    add mkcert.
+        In vite.config.ts:
+import { defineConfig } from 'vite';
+import mkcert from "vite-plugin-mkcert";
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react(), mkcert()],
+  server: {
+    origin: "https://localhost:3000",
+    https: true,
+    host: 'localhost',
+    port: 3000, // Change the port if needed
+  },
+});
+
+2025-01-11
+To Enable the feature "Chrome devtools > Sources > Workspace > Add Folder", in vite.config.ts add:
+(Still not working. Maybe on other computers.)
+  css: {
+    devSourcemap: true,
+  },
+  build: {
+    sourcemap: true,
+  }
+
+Build failed second time, the CardForm etc is not properly typed.
+Webstie works with light mode version.
+rate needs to be converted to integer before dark version would work.
+
+How i migrated from '10min' to 0. ~
+  const Redis = require('redis');
+  const client = Redis.createClient();
+
+  async function migrateRates() {
+    const cards = await client.keys('card:*');
+    
+    for (const cardKey of cards) {
+      const card = await client.hGetAll(cardKey);
+      
+      if (card.rate === '10minutes') {
+        await client.multi()
+          .hSet(cardKey, 'rate', '0')
+          .exec();
+      }
+    }
+  }
+
+  migrateRates()
+    .then(() => console.log('Migration complete'))
+    .catch(console.error);
+
+
+  -----------
+    Run with:
+
+  node scripts/migrate-redis-rates.js
+  -------------  
+
+npm add @biomejs/biome -D
+Ini i also installed windows-specific biome and was in non-dev *general dependencies but render.com build broke (probably).
+
+I had to force render.com to use node 16 or higher for my app, because vite requires it:
+Vite 4.x requires Node.js 14.18+/16+
+Render.com had node 14.17 but it was simpler to just require 16+. So i added in package.json:
+"engines": {
+		"node": ">=16.0.0"
+},
+
+The cards api is called 2 times locally, but in prid not, so i don't worry.
+
+Prompt:
+
+
+2smart-anki-2 is the React app and 9smart-anki-web-s is the web server. 
+Each Card can have a rate, an integer. 0 means the user wants to view it today again, other numbers mean the number of days until view it again. Let's replace the reviewedAt with dueDate. (is "due" the right word?) YYYY-MM-DD, stored as string on redis. So when user rates the card with 0, we record today as the dueDate. If rate is 1, then today + 1 day, etc. The server should deliver the cards, 10 at a time, sorted by dueDate, the earliest dates first. We'll also display due date as an under the hood info. When the ninth card is reveiewed, load early ten more cards again and adapt the code so it can manage cardList properly.  ......
+
+2025-04-14
+My message in new commit:
+I'm in 32/. Git pull gave me 2 biome-related commits, where from? CUrrent commit is what I found in 32/ staying here. 3 fires is extra.
+
+The biome-related commits must have been from MSI because there is no other CardList.tsx on DELL.
+
+I deleted 38/ , and i archived the corresponding smart-anki (not smart-anki-2) on github.
+
+Would be good to:
+Make a new page and a tab "Manage". It will contain a Download BD button, and an Upload DB button. You'll need to click download after addign new cards, and reupload if memory is lost. That happened a few times when onrender resetted for some reason (their server went down, I guess).
+Reason:
+"​On Render.com's free plan, Redis instances are non-persistent, meaning data is stored only in memory and will be lost upon service restarts or crashes"
+https://chatgpt.com/c/67fc9709-3ab8-8009-b0a1-98e57c6ef793
+
+
+
+
+
+
+
