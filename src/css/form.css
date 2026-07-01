@@ -26,23 +26,23 @@ h1 {
 
 .category-select {
 	padding: 0.75rem;
-	border: 1px solid rgba(249, 115, 22, 0.3);
+	border: 1px solid var(--border-color);
 	border-radius: 4px;
 	font-size: 1rem;
 	font-family: inherit;
-	background: rgba(255, 255, 255, 0.1);
+	background: var(--input-background);
 	color: white;
 	cursor: pointer;
 }
 
 .category-select:focus {
 	outline: none;
-	border-color: #f97316;
-	box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+	border-color: var(--accent-2);
+	box-shadow: 0 0 0 2px rgba(77, 212, 172, 0.24);
 }
 
 .category-select option {
-	background: #1a0f05;
+	background: var(--background-panel);
 	color: white;
 }
 
@@ -75,8 +75,8 @@ h1 {
 
 .side-input:focus {
 	outline: none;
-	border-color: #f97316;
-	box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+	border-color: var(--accent-2);
+	box-shadow: 0 0 0 2px rgba(77, 212, 172, 0.24);
 }
 
 .button-group {
@@ -99,4 +99,3 @@ h1 {
 .action-button:hover {
 	background: var(--button-hover);
 }
-

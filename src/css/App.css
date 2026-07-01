@@ -11,7 +11,7 @@ nav a {
 }
 
 .nav-section-select {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
+	background: var(--button-background);
 	color: white;
 	border: none;
 	padding: 0.25rem 2rem 0.25rem 0.75rem;
@@ -31,7 +31,7 @@ nav a {
 }
 
 .nav-section-select option {
-	background: #1a0f05;
+	background: var(--background-panel);
 	color: white;
 }
 
@@ -56,7 +56,7 @@ nav a {
 .background-base {
 	position: absolute;
 	inset: 0;
-	background-color: #1a0f05;
+	background-color: var(--background);
 }
 
 .background-middle {
@@ -67,7 +67,7 @@ nav a {
 .diagonal-section-middle {
 	position: absolute;
 	inset: 0;
-	background-color: #2d1a0a;
+	background-color: var(--background-panel);
 	clip-path: polygon(100% -48%, -48% 100%, 100% 100%);
 }
 
@@ -79,7 +79,7 @@ nav a {
 .diagonal-section-top {
 	position: absolute;
 	inset: 0;
-	background-color: #3d2410;
+	background-color: var(--background-panel-strong);
 	clip-path: polygon(23% 100%, 100% 23%, 100% 100%);
 }
 
@@ -101,12 +101,12 @@ nav a {
 	align-items: center;
 	justify-content: space-between;
 	gap: 0.5rem;
-	color: #9ca3af;
+	color: var(--text-secondary);
 }
 
 .progress-bar {
 	height: 0.5rem;
-	background-color: #374151;
+	background-color: rgba(255, 255, 255, 0.14);
 	border-radius: 9999px;
 	margin-top: 0.5rem;
 }
@@ -114,15 +114,15 @@ nav a {
 .progress-fill {
 	height: 100%;
 	width: 33.333333%;
-	background: linear-gradient(90deg, #f97316, #fbbf24);
+	background: linear-gradient(90deg, var(--accent), var(--accent-2));
 	border-radius: 9999px;
 }
 
 /* Flashcard Styles */
 .card-list {
-	background-color: rgba(249, 115, 22, 0.15);
+	background-color: var(--surface);
 	border: none;
-	box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1);
+	box-shadow: 0 20px 35px -12px var(--accent-glow);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 19px;
@@ -142,7 +142,7 @@ nav a {
 
 .category-button,
 .groups-selector {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
+	background: var(--button-background);
 	color: white;
 	border: none;
 	padding: 0.25rem 0.75rem;
@@ -160,17 +160,17 @@ nav a {
 }
 
 .category-button:hover {
-	background: linear-gradient(135deg, #ea580c, #f59e0b);
+	background: var(--button-hover);
 }
 
 .category-button:focus {
 	outline: none;
-	box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.5);
+	box-shadow: 0 0 0 2px var(--accent-glow);
 }
 
 .category-button option,
 .groups-selector option {
-	background: #1a0f05;
+	background: var(--background-panel);
 	color: white;
 }
 
@@ -240,15 +240,15 @@ nav a {
 .show-button {
 	width: calc(100% - 20px);
 	margin: 0 10px;
-	background: linear-gradient(135deg, #f97316, #fbbf24);
-	color: white;
+	background: var(--button-background);
+	color: black;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	transition: background 0.2s;
 }
 
 .show-button:hover {
-	background: linear-gradient(135deg, #ea580c, #f59e0b);
+	background: var(--button-hover);
 }
 
 .rating-buttons {
@@ -261,7 +261,7 @@ nav a {
 	transform: translateX(-50%);
 	top: 2px;
 	border-radius: 7px 7px 0 0;
-	background-color: #000;
+	background-color: var(--input-background);
 	color: #fff;
 	border: none;
 	width: calc(100% - 10px);
@@ -278,8 +278,8 @@ nav a {
 }
 
 .rating-buttons button {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
-	color: white;
+	background: var(--button-background);
+	color: black;
 	padding: 0.5rem 0;
 	border-radius: 0.5rem;
 	font-size: 0.875rem;
@@ -302,7 +302,7 @@ nav a {
 }
 
 .rating-buttons button:hover {
-	background: linear-gradient(135deg, #ea580c, #f59e0b);
+	background: var(--button-hover);
 }
 
 .difficulty-dots {
@@ -316,7 +316,7 @@ nav a {
 	width: 0.5rem;
 	height: 0.5rem;
 	border-radius: 9999px;
-	background: linear-gradient(135deg, #f97316, #fbbf24);
+	background: linear-gradient(135deg, var(--accent), var(--accent-2));
 }
 
 /* List Page Styles */
@@ -337,7 +337,7 @@ nav a {
 	width: calc(100% - 3.5rem - 2px);
 	padding: 0.5rem 1rem;
 	padding-right: 2.5rem; /* Make room for clear button */
-	border: 1px solid rgba(249, 115, 22, 0.3);
+	border: 1px solid var(--border-color);
 	border-radius: 0.5rem;
 	background-color: rgba(255, 255, 255, 0.1);
 	color: white;
@@ -352,8 +352,8 @@ nav a {
 
 .search-input:focus {
 	outline: none;
-	border-color: #f97316;
-	box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+	border-color: var(--accent-2);
+	box-shadow: 0 0 0 2px rgba(77, 212, 172, 0.24);
 }
 
 .delete-all-button {
@@ -373,8 +373,8 @@ nav a {
 }
 
 .export-button {
-	background: linear-gradient(135deg, #3b82f6, #2563eb);
-	color: white;
+	background: linear-gradient(135deg, var(--info), var(--info-strong));
+	color: black;
 	border: none;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -384,12 +384,12 @@ nav a {
 }
 
 .export-button:hover {
-	background: linear-gradient(135deg, #2563eb, #1d4ed8);
+	background: linear-gradient(135deg, #0ea5e9, #1d4ed8);
 }
 
 .import-button {
-	background: linear-gradient(135deg, #3b82f6, #2563eb);
-	color: white;
+	background: linear-gradient(135deg, var(--info), var(--info-strong));
+	color: black;
 	border: none;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -401,14 +401,14 @@ nav a {
 }
 
 .import-button:hover {
-	background: linear-gradient(135deg, #2563eb, #1d4ed8);
+	background: linear-gradient(135deg, #0ea5e9, #1d4ed8);
 }
 
 .fast-forward-button,
 .slow-down-button {
 	flex: 0;
-	background: linear-gradient(135deg, #10b981, #059669);
-	color: white;
+	background: linear-gradient(135deg, var(--accent-2), var(--accent-2-strong));
+	color: black;
 	border: none;
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -419,11 +419,11 @@ nav a {
 
 .fast-forward-button:hover,
 .slow-down-button:hover {
-	background: linear-gradient(135deg, #059669, #047857);
+	background: linear-gradient(135deg, var(--accent-2-strong), #0f8f75);
 }
 
 .card-count {
-	color: #9ca3af;
+	color: var(--text-secondary);
 	font-size: 0.875rem;
 	margin-top: 0.5rem;
 }
@@ -436,9 +436,9 @@ nav a {
 }
 
 .card-list-item {
-	background-color: rgba(249, 115, 22, 0.15);
+	background-color: var(--surface);
 	border: none;
-	box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1);
+	box-shadow: 0 20px 35px -12px var(--accent-glow);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 19px;
@@ -452,7 +452,7 @@ nav a {
 }
 
 .card-list-item:hover {
-	background-color: rgba(249, 115, 22, 0.25);
+	background-color: var(--surface-hover);
 	transform: translateY(-2px);
 }
 
@@ -476,11 +476,11 @@ nav a {
 .card-list-due {
 	font-size: 0.875rem;
 	font-weight: 500;
-	color: #7e7e7e;
+	color: var(--text-muted);
 }
 
 .card-list-due.past {
-	color: #fbbf24;
+	color: var(--accent);
 }
 
 .card-list-actions {
@@ -497,19 +497,20 @@ nav a {
 	font-weight: 500;
 	cursor: pointer;
 	transition: background 0.2s;
-	color: white;
+	color: black;
 }
 
 .edit-button {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
+	background: var(--button-background);
 }
 
 .edit-button:hover {
-	background: linear-gradient(135deg, #ea580c, #f59e0b);
+	background: var(--button-hover);
 }
 
 .delete-button {
 	background: linear-gradient(135deg, #dc2626, #b91c1c);
+	color: white;
 }
 
 .delete-button:hover {
@@ -518,10 +519,10 @@ nav a {
 
 .no-cards-message {
 	text-align: center;
-	color: #9ca3af;
+	color: var(--text-secondary);
 	font-size: 1.125rem;
 	padding: 3rem 1rem;
-	background-color: rgba(249, 115, 22, 0.15);
+	background-color: var(--surface);
 	border-radius: 19px;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -552,13 +553,13 @@ nav a {
 }
 
 .search-clear-btn:hover {
-	color: white;
+	color: black;
 }
 
 /* Side colors */
 .side-yellow h2,
 .sentence-yellow {
-	color: yellow;
+	color: var(--accent-2);
 }
 
 .sentence-yellow {
@@ -581,9 +582,9 @@ nav a {
 }
 
 .group-card-item {
-	background-color: rgba(0, 0, 0, 0.15);
+	background-color: var(--surface-muted);
 	border: none;
-	box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1);
+	box-shadow: 0 20px 35px -12px var(--accent-glow);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 19px;
@@ -597,7 +598,7 @@ nav a {
 }
 
 .group-card-item:hover {
-	background-color: rgba(249, 115, 22, 0.25);
+	background-color: var(--surface-hover);
 	transform: translateY(-2px);
 }
 
@@ -606,7 +607,7 @@ nav a {
 }
 
 .group-card-item.selected {
-	background-color: rgba(249, 115, 22, 0.25);
+	background-color: var(--surface-hover);
 }
 
 .group-card-content {
@@ -623,29 +624,29 @@ nav a {
 }
 
 .group-card-side:nth-child(1) {
-	color: #b05617;
+	color: #d66f77;
 }
 
 .group-card-side:nth-child(2) {
-	color: #a07a1c;
+	color: #54b99e;
 }
 
 .group-card-item.selected .group-card-side:nth-child(1) {
-	color: #f97316;
+	color: var(--accent);
 }
 
 .group-card-item.selected .group-card-side:nth-child(2) {
-	color: #fbbf24;
+	color: var(--accent-2);
 }
 
 .group-card-due {
 	font-size: 0.875rem;
 	font-weight: 500;
-	color: #7e7e7e;
+	color: var(--text-muted);
 }
 
 .group-card-due.past {
-	color: #fbbf24;
+	color: var(--accent);
 }
 
 .group-card-actions {
@@ -662,7 +663,7 @@ nav a {
 	font-weight: 500;
 	cursor: pointer;
 	transition: background 0.2s;
-	color: white;
+	color: black;
 }
 
 .remove-card-btn {
@@ -674,17 +675,17 @@ nav a {
 }
 
 .add-card-btn {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
+	background: var(--button-background);
 }
 
 .add-card-btn:hover {
-	background: linear-gradient(135deg, #fbbf24, #f97316);
+	background: var(--button-hover);
 }
 
 .group-list-item {
 	background-color: #94949426;
 	border: none;
-	box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.1);
+	box-shadow: 0 20px 35px -12px var(--accent-glow);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 19px;
@@ -717,24 +718,24 @@ nav a {
 }
 
 .app-container .groups-content .flashcard button:not(.winter) {
-	background: linear-gradient(135deg, #a2544e, #f97316);
+	background: linear-gradient(135deg, #9a5f9f, var(--accent));
 }
 
 .delete-all-groups-btn,
 .group-actions > button,
 .save-group-btn,
 .set-cards-to-due-btn {
-	color: white;
+	color: black;
 }
 
 .winter {
 	color: white;
-	background-color: #1a1a1a;
+	background-color: var(--input-background);
 }
 
 .action-button.primary {
-	background: linear-gradient(135deg, #f97316, #fbbf24);
-	color: white;
+	background: var(--button-background);
+	color: black;
 }
 
 .movement-buttons {

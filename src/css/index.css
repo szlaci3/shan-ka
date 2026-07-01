@@ -1,63 +1,90 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	--background: #071316;
+	--background-panel: #0d2025;
+	--background-panel-strong: #143238;
+	--surface: rgba(39, 68, 72, 0.58);
+	--surface-hover: rgba(54, 94, 97, 0.72);
+	--surface-muted: rgba(255, 255, 255, 0.08);
+	--text-primary: #f3fbf8;
+	--text-secondary: #a8bab8;
+	--text-muted: #78918e;
+	--accent: #00bc4b;
+	--accent-strong: #01ac45;
+	--accent-2: #4dd4ac;
+	--accent-2-strong: #24b995;
+	--accent-glow: rgba(77, 212, 172, 0.24);
+	--border-color: rgba(77, 212, 172, 0.32);
+	--input-background: rgba(5, 16, 18, 1);
+	--button-background: linear-gradient(135deg, var(--accent), var(--accent-2));
+	--button-hover: linear-gradient(
+		135deg,
+		var(--accent-strong),
+		var(--accent-2-strong)
+	);
+	--danger: #ef4444;
+	--danger-strong: #b91c1c;
+	--info: #38bdf8;
+	--info-strong: #2563eb;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	color-scheme: light dark;
+	color: var(--text-primary);
+	background-color: var(--background);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  font-weight: 500;
-  color: #f97316;
-  text-decoration: inherit;
+	font-weight: 500;
+	color: var(--accent-2);
+	text-decoration: inherit;
 }
 a:hover {
-  color: #fbbf24;
+	color: var(--accent);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
 }
 
 h1 {
-  line-height: 1.1;
+	line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: var(--input-background);
+	cursor: pointer;
+	transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #f97316;
+	border-color: var(--accent-2);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+	outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
-  a:hover {
-    color: #f59e0b;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+	a:hover {
+		color: var(--accent);
+	}
+	button {
+		background-color: #f9f9f9;
+	}
 }
