@@ -92,7 +92,7 @@ h1 {
 	font-weight: 500;
 	cursor: pointer;
 	background: var(--button-background);
-	color: var(--text-primary);
+	color: black;
 	transition: background-color 0.2s;
 }
 
